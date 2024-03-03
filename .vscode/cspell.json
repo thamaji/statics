@@ -1,0 +1,20 @@
+{
+    "useGitignore": true,
+    "ignorePaths": [
+        "**/.devcontainer/**",
+        "**/.git/objects/**",
+        "**/.vscode/**",
+        "**/*.log",
+        "**/*.sh",
+        "**/Dockerfile",
+        "**/go.mod",
+        "**/go.sum",
+        "**/vendor/**"
+    ],
+    "words": [
+        "modtime",
+        "relpath",
+        "thamaji",
+        "upath"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "terminal.integrated.allowChords": false,
+
+    "files.exclude": {
+        "**/vendor/": true
+    },
+    "files.watcherExclude": {
+        "**/vendor/": true
+    },
+    "search.exclude": {
+        "**/.devcontainer": true,
+        "**/.vscode": true,
+        "**/vendor/": true
+    },
+
+    // Golang
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+    "go.lintOnSave": "workspace",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast",
+        "-exclude=vendor/..."
+    ],
+    "go.vetOnSave": "workspace",
+    "go.vetFlags": [
+		"-all"
+	],
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.snippetSuggestions": "bottom"
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true,
+        "staticcheck": false
+    }
+}
