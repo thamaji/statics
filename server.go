@@ -43,8 +43,6 @@ type option struct {
 }
 
 func FileServer(dir string, options ...Option) http.Handler {
-	memSize := 0
-
 	option := option{
 		compressibleContentTypes: []string{
 			"application/atom+xml",
@@ -58,7 +56,7 @@ func FileServer(dir string, options ...Option) http.Handler {
 			"text/javascript",
 			"text/plain",
 		},
-		compressibleContentLength: 0,
+		compressibleContentLength: 1024,
 		notFound:                  http.HandlerFunc(http.NotFound),
 	}
 	for _, fn := range options {
@@ -85,8 +83,6 @@ func FileServer(dir string, options ...Option) http.Handler {
 		if err != nil {
 			return nil
 		}
-
-		memSize += len(body)
 
 		// detect Content-Type
 		contentType := mime.TypeByExtension(filepath.Ext(fpath))
